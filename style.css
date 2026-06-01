@@ -202,6 +202,257 @@ body {
     font-weight: 600;
 }
 
+/* Map Container Styles */
+.map-container {
+    background: #F5F5F5;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    border: 1px solid #e0e0e0;
+}
+
+#worldMap {
+    height: 550px;
+    width: 100%;
+    background: #e8f0f4;
+    border-radius: 16px;
+}
+
+/* Custom marker style */
+.custom-marker {
+    background: #0992C2;
+    border: 2px solid #FFD700;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: white;
+    font-size: 14px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    transition: transform 0.2s ease;
+    cursor: pointer;
+}
+
+.custom-marker:hover {
+    transform: scale(1.1);
+    background: #0a7aad;
+}
+
+/* Popup styling - Obsidian-like note cards */
+.custom-popup .leaflet-popup-content-wrapper {
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    border-left: 4px solid #0992C2;
+    font-family: 'Poppins', sans-serif;
+}
+
+.custom-popup .leaflet-popup-content {
+    margin: 12px 18px;
+    min-width: 260px;
+    max-width: 320px;
+}
+
+.location-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #0992C2;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 2px solid #FFD700;
+    padding-bottom: 6px;
+}
+
+.location-title i {
+    color: #FFD700;
+}
+
+.notes-count {
+    background: #f0f2f5;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #0992C2;
+    display: inline-block;
+    margin-bottom: 12px;
+}
+
+.notes-list {
+    max-height: 220px;
+    overflow-y: auto;
+    margin: 10px 0;
+}
+
+.note-item {
+    background: #f9f9fb;
+    border-radius: 12px;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+    border-left: 3px solid #0992C2;
+    transition: all 0.2s;
+}
+
+.note-item:hover {
+    background: #eef2ff;
+    transform: translateX(3px);
+}
+
+.note-title {
+    font-weight: 600;
+    color: #2c3e50;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.note-title a {
+    color: #0992C2;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.85rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    transition: color 0.2s;
+}
+
+.note-title a:hover {
+    color: #FFD700;
+    text-decoration: underline;
+}
+
+.note-content {
+    font-size: 0.85rem;
+    color: #4a5568;
+    line-height: 1.4;
+    margin-top: 4px;
+}
+
+.note-tags {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+}
+
+.tag {
+    background: #e2e8f0;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    color: #2d3748;
+}
+
+.add-note-form {
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid #e2e8f0;
+}
+
+.add-note-form input, 
+.add-note-form textarea {
+    width: 100%;
+    padding: 8px 12px;
+    margin-bottom: 8px;
+    border: 1px solid #cbd5e0;
+    border-radius: 12px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.8rem;
+    transition: all 0.2s;
+}
+
+.add-note-form input:focus, 
+.add-note-form textarea:focus {
+    outline: none;
+    border-color: #0992C2;
+    box-shadow: 0 0 0 2px rgba(9, 146, 194, 0.2);
+}
+
+.add-note-form button {
+    background: #0992C2;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 40px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.8rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s;
+}
+
+.add-note-form button:hover {
+    background: #0a7aad;
+    transform: scale(1.02);
+}
+
+.hyperlink-badge {
+    background: #0992C2;
+    color: white;
+    border-radius: 20px;
+    padding: 2px 8px;
+    font-size: 0.7rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.hyperlink-badge:hover {
+    background: #FFD700;
+    color: #2c3e50;
+}
+
+.map-legend {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: white;
+    padding: 8px 16px;
+    border-radius: 40px;
+    margin-top: 12px;
+    margin-bottom: 8px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    width: fit-content;
+}
+
+.legend-dot {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: #0992C2;
+    border-radius: 50%;
+    margin-right: 6px;
+    border: 1px solid #FFD700;
+}
+
+/* Leaflet zoom control styling */
+.leaflet-control-zoom {
+    border: none !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1) !important;
+}
+
+.leaflet-control-zoom a {
+    background: #0992C2 !important;
+    color: white !important;
+    border-radius: 8px !important;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .container {
@@ -231,5 +482,13 @@ body {
     
     .empty-state i {
         font-size: 3rem;
+    }
+    
+    #worldMap {
+        height: 400px;
+    }
+    
+    .custom-popup .leaflet-popup-content {
+        max-width: 260px;
     }
 }
