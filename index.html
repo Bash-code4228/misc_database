@@ -1,32 +1,35 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>PORT 4228</title>
+    <title>PORT 4228 - Interactive World Map</title>
     <!-- Google Fonts: Poppins -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Font Awesome 6 (Free Icons) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Leaflet CSS for interactive map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <!-- External CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <!-- Header Section: Heading on the left side -->
+        <!-- Header Section -->
         <div class="header">
             <div class="header-left">
                 <h1><i class="fas fa-compass"></i>PORT 4228</h1>
-                <p>Logging in research files.</p>
+                <p>Logging in research files. Interactive Knowledge Atlas</p>
             </div>
         </div>
 
-        <!-- TABS COMPONENT : three distinct empty tabs -->
+        <!-- TABS COMPONENT -->
         <div class="tabs-container">
             <div class="tabs-nav">
                 <button class="tab-btn active" data-tab="tab1">
-                    <i class="fas fa-dragon"></i> Tab One
+                    <i class="fas fa-dragon"></i> World Atlas
                 </button>
                 <button class="tab-btn" data-tab="tab2">
                     <i class="fas fa-users"></i> Tab Two
@@ -36,14 +39,20 @@
                 </button>
             </div>
 
-            <!-- Tab Content Panels (Empty - ready for your content) -->
+            <!-- Tab Content Panels -->
             <div class="tabs-content">
-                <!-- Tab 1 - Empty -->
+                <!-- Tab 1 - Interactive World Map -->
                 <div class="tab-pane active" id="tab1">
-                    <div class="empty-state">
-                        <i class="fas fa-folder-open"></i>
-                        <h3>Tab One is empty</h3>
-                        <p>Add your content here — cards, tables, forms, or anything you need.</p>
+                    <div class="map-container">
+                        <div id="worldMap"></div>
+                        <div class="map-legend">
+                            <span><i class="legend-dot"></i> Location marker</span>
+                            <span><i class="fas fa-sticky-note"></i> Click marker to view & add notes</span>
+                            <span><i class="fas fa-link"></i> Hyperlinks connect regions</span>
+                        </div>
+                    </div>
+                    <div class="artist-credit" style="margin-top: 5px; border-top: none;">
+                        <i class="fas fa-globe-americas"></i> Zoom / Pan · Click dots to explore linked notes
                     </div>
                 </div>
 
@@ -67,9 +76,8 @@
             </div>
         </div>
 
-        <!-- subtle artist credit -->
         <div class="artist-credit">
-            <i class="fas fa-feather-alt"></i> Nexus interface · ready for your universe
+            <i class="fas fa-feather-alt"></i> Nexus interface · Obsidian-style connective notes on world map
         </div>
     </div>
 
